@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087443">
+  <meta name="description" content="PRINCE NICK DATA HUB — Fast, Affordable & Reliable Data in Ghana.">
+  <title>PRINCE NICK DATA HUB | Data Bundles</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PRINCE NICK DATA HUB home">
+      <span class="brand-mark">PN</span>
+      <span><strong>PRINCE NICK</strong><small>DATA HUB</small></span>
+    </a>
+    <nav><a href="#bundles">Bundles</a><a href="#how">How it works</a><a href="#support">Support</a></nav>
+    <a class="header-cta" href="#bundles">Buy data</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="live-dot"></span> YOUR CONNECTIVITY PARTNER</span>
+        <h1>Stay connected.<br><span>Go further.</span></h1>
+        <p class="tagline">Fast, Affordable &amp; Reliable Data.</p>
+        <p class="hero-text">Choose your network and find a data bundle that works for you. Simple, convenient and designed for Ghana.</p>
+        <a class="primary-btn" href="#bundles">Explore data bundles <span aria-hidden="true">→</span></a>
+        <div class="trust-line"><span>✓ Easy ordering</span><span>✓ Clear pricing</span><span>✓ Customer support</span></div>
+      </div>
+      <div class="hero-art" aria-label="Mobile connectivity illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="phone">
+          <div class="phone-top"></div>
+          <div class="signal-icon">⌁</div>
+          <div class="phone-label">DATA<br><b>CONNECTED</b></div>
+          <div class="signal-bars"><i></i><i></i><i></i><i></i></div>
+          <div class="phone-bottom"></div>
+        </div>
+        <div class="floating-card card-top"><span>✦</span> Stay online</div>
+        <div class="floating-card card-bottom"><b>3</b><span>Networks<br>in one hub</span></div>
+      </div>
+    </section>
+
+    <section class="network-strip" aria-label="Available networks">
+      <p>CHOOSE YOUR NETWORK</p>
+      <div class="network-list">
+        <button class="network active" data-network="MTN" type="button"><span class="network-symbol mtn">M</span> MTN</button>
+        <button class="network" data-network="Telecel" type="button"><span class="network-symbol telecel">T</span> Telecel</button>
+        <button class="network" data-network="AT" type="button"><span class="network-symbol at">A</span> AT</button>
+      </div>
+    </section>
+
+    <section class="bundles section" id="bundles">
+      <div class="section-heading">
+        <div><span class="eyebrow">FIND YOUR BUNDLE</span><h2>Data made simple.</h2></div>
+        <p>Select a network to view its bundle options.</p>
+      </div>
+      <div class="notice"><strong>Demo catalogue:</strong> Bundle sizes and prices below are sample placeholders. Confirm current packages and prices with your approved supplier before accepting orders.</div>
+      <div class="bundle-grid" id="bundleGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="how section" id="how">
+      <span class="eyebrow">A SIMPLE PROCESS</span><h2>How it works</h2>
+      <div class="steps">
+        <article><span>01</span><h3>Choose a network</h3><p>Select MTN, Telecel or AT.</p></article>
+        <article><span>02</span><h3>Pick your bundle</h3><p>Choose the data package that suits you.</p></article>
+        <article><span>03</span><h3>Enter your number</h3><p>Provide the recipient mobile number carefully.</p></article>
+        <article><span>04</span><h3>Pay securely</h3><p>Complete payment through the official checkout when enabled.</p></article>
+      </div>
+    </section>
+
+    <section class="support section" id="support">
+      <div><span class="eyebrow">WE'RE HERE TO HELP</span><h2>Need assistance?</h2><p>Questions about an order? Contact our support team.</p></div>
+      <a class="support-btn" href="mailto:support@example.com">Email support</a>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">PN</span><span><strong>PRINCE NICK</strong><small>DATA HUB</small></span></a><p>Fast, Affordable &amp; Reliable Data.</p><small>© <span id="year"></span> PRINCE NICK DATA HUB. All rights reserved.</small></footer>
+
+  <dialog id="orderDialog">
+    <form method="dialog" class="dialog-close"><button aria-label="Close">×</button></form>
+    <span class="eyebrow">ORDER PREVIEW</span>
+    <h2 id="dialogTitle">Your bundle</h2>
+    <p id="dialogDetail"></p>
+    <label for="phone">Recipient phone number</label>
+    <input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="e.g. 0241234567" maxlength="10">
+    <p class="field-hint">Enter a 10-digit Ghanaian mobile number.</p>
+    <div class="dialog-note">This is a website preview. Live payment and automatic delivery have not yet been connected. No payment will be taken.</div>
+    <button class="primary-btn full" id="previewOrder" type="button">Validate number</button>
+    <p id="formMessage" role="status" class="form-message"></p>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
