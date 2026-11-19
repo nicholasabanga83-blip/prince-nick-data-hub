@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087443">
+  <title>Order Data | PRINCE NICK DATA HUB</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="PRINCE NICK DATA HUB home">
+      <span class="brand-mark">PN</span>
+      <span><strong>PRINCE NICK</strong><small>DATA HUB</small></span>
+    </a>
+    <span class="demo-pill">DEMO MODE</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">FAST • AFFORDABLE • RELIABLE DATA</p>
+      <h1>Buy data bundles</h1>
+      <p>Choose your network, select a bundle and review your order.</p>
+    </section>
+
+    <section class="panel">
+      <h2>1. Choose your network</h2>
+      <div class="networks" role="group" aria-label="Choose network">
+        <button class="network active" type="button" data-network="MTN"> <span class="network-dot mtn"></span> MTN</button>
+        <button class="network" type="button" data-network="Telecel"><span class="network-dot telecel"></span> Telecel</button>
+        <button class="network" type="button" data-network="AT"><span class="network-dot at"></span> AT</button>
+      </div>
+
+      <h2 class="bundle-heading">2. Select a bundle</h2>
+      <div id="bundles" class="bundles" aria-live="polite"></div>
+
+      <div class="field">
+        <label for="phone">Recipient phone number</label>
+        <input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="e.g. 0241234567" maxlength="13">
+        <small>Enter the Ghanaian number that should receive the data.</small>
+      </div>
+
+      <div class="summary">
+        <div><span>Selected network</span><strong id="summary-network">MTN</strong></div>
+        <div><span>Bundle</span><strong id="summary-bundle">Choose a bundle</strong></div>
+        <div><span>Demo price</span><strong id="summary-price">GH₵ —</strong></div>
+      </div>
+
+      <button id="review" class="primary" type="button">Review order</button>
+      <p class="notice"><strong>Demo only:</strong> This page does not collect money or deliver data. Prices are sample values and must be confirmed with an approved supplier before launch.</p>
+    </section>
+
+    <section id="confirmation" class="panel confirmation" hidden aria-live="polite">
+      <div class="success-icon">✓</div>
+      <h2>Order preview</h2>
+      <p>This is a preview only. No order has been submitted.</p>
+      <div id="preview-details" class="preview-details"></div>
+      <button id="edit" class="secondary" type="button">Edit order</button>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> PRINCE NICK DATA HUB</p>
+      <p>Customer support: use the contact details published on the official website.</p>
+    </footer>
+  </main>
+  <script src="order.js"></script>
+</body>
+</html>
