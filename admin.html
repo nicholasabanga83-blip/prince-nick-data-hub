@@ -1,7 +1,58 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#087443"><title>Admin | PRINCE NICK DATA HUB</title><link rel="stylesheet" href="admin.css"></head><body>
-<header><a href="index.html"><b>PN</b> PRINCE NICK DATA HUB · ADMIN</a><a href="index.html">View website ↗</a></header><main>
-<div class="top"><div><small>CONTROL CENTRE</small><h1>Admin dashboard</h1><p>Manage your catalogue and review demo orders.</p></div><strong class="pill">DEMO MODE</strong></div>
-<div class="warning"><b>Demo only:</b> Prices are saved only in this browser on this device. This is not a secure multi-user admin system. It does not process payments or deliver data. Do not enter real customer information.</div>
-<div class="stats"><article>Bundle products<b id="productCount">9</b><small>Across 3 networks</small></article><article>Demo orders<b id="orderCount">0</b><small>Prototype only</small></article><article>Demo sales total<b id="salesTotal">GH₵0.00</b><small>Not actual revenue</small></article></div>
-<section><div class="sectionhead"><div><small>CATALOGUE</small><h2>Manage bundle prices</h2></div><button id="resetBtn">Reset demo data</button></div><div class="scroll"><table><thead><tr><th>Network</th><th>Bundle</th><th>Price (GH₵)</th><th>Action</th></tr></thead><tbody id="bundleRows"></tbody></table></div><p class="hint">Prices entered here are for layout testing only. Confirm actual packages and wholesale prices with your authorized supplier before launch.</p></section>
-<section><small>ORDER ACTIVITY</small><h2>Demo orders</h2><p id="ordersEmpty" class="empty">No demo orders yet. Customer checkout is not connected.</p><div class="scroll"><table id="ordersTable" hidden><thead><tr><th>Reference</th><th>Network</th><th>Bundle</th><th>Amount</th><th>Status</th></tr></thead><tbody id="orderRows"></tbody></table></div></section><footer>PRINCE NICK DATA HUB · Admin preview</footer></main><script src="admin.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087443">
+  <title>Admin Dashboard | PRINCE NICK DATA HUB</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="logo">PN</div><div><strong>PRINCE NICK</strong><span>DATA HUB · ADMIN</span></div></div>
+    <span class="demo">DEMO ADMIN</span>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <p class="eyebrow">FAST · AFFORDABLE · RELIABLE DATA</p>
+      <h1>Admin dashboard</h1>
+      <p>Monitor sample orders and manage demonstration prices.</p>
+    </section>
+
+    <div class="notice"><strong>Demo only:</strong> This dashboard uses sample records saved in this browser. It is not connected to customers, payments, a database or a data supplier. Do not use it to process real orders.</div>
+
+    <section class="stats" aria-label="Demo sales summary">
+      <article class="stat"><span>Demo orders</span><strong id="totalOrders">0</strong></article>
+      <article class="stat"><span>Successful</span><strong id="successfulOrders">0</strong></article>
+      <article class="stat"><span>Pending</span><strong id="pendingOrders">0</strong></article>
+      <article class="stat"><span>Demo sales value</span><strong id="salesValue">GH₵0.00</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>Demo orders</h2><p>Search and update sample order statuses.</p></div><button id="resetOrders" class="button secondary">Reset demo orders</button></div>
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="Search phone number or order ID" aria-label="Search orders">
+        <select id="statusFilter" aria-label="Filter by status">
+          <option value="all">All statuses</option><option value="Pending">Pending</option><option value="Successful">Successful</option><option value="Failed">Failed</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Order ID</th><th>Phone</th><th>Network</th><th>Bundle</th><th>Amount</th><th>Status</th><th>Update status</th></tr></thead>
+          <tbody id="ordersBody"></tbody>
+        </table>
+      </div>
+      <p id="emptyState" class="empty" hidden>No matching demo orders.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>Sample bundle prices</h2><p>Changes are saved only in this browser.</p></div></div>
+      <div id="priceList" class="price-grid"></div>
+      <div class="actions"><button id="savePrices" class="button">Save sample prices</button><button id="resetPrices" class="button secondary">Restore sample prices</button></div>
+      <p id="priceMessage" class="message" role="status"></p>
+    </section>
+    <footer>© 2026 PRINCE NICK DATA HUB · DEMO ADMIN DASHBOARD</footer>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
